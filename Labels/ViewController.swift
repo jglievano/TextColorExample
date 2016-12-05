@@ -10,16 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var myLabel: UILabel!
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    myLabel.textColor = UIColor(hue: 0.5, saturation: 0.5, brightness: 0.5, alpha: 1.0)
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  @IBAction func changeColor(_ sender: UISlider) {
+    print(sender.value)
+    myLabel.textColor = UIColor(hue: CGFloat(sender.value),
+                                saturation: CGFloat(sender.value),
+                                brightness: CGFloat(sender.value),
+                                alpha: 1.0)
   }
-
 
 }
 
